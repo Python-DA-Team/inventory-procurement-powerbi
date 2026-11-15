@@ -7,11 +7,12 @@
   <img alt="Datenaufbereitung mit Power Query" src="https://img.shields.io/badge/Power_Query-M-217346?style=flat-square">
   <img alt="Kennzahlen mit DAX" src="https://img.shields.io/badge/Kennzahlen-DAX-174A70?style=flat-square">
   <img alt="Excel als Datenquelle" src="https://img.shields.io/badge/Datenquelle-Excel-217346?style=flat-square">
+  <img alt="Lernprojekt" src="https://img.shields.io/badge/Projekt-Lernmaterial-orange?style=flat-square">
 </p>
 
 Ein interaktiver Power-BI-Bericht zur Analyse von Beschaffung, Warenbeständen und Lieferzuverlässigkeit. Das Lern- und Portfolioprojekt verbindet Excel-Daten, Power Query, ein relationales Datenmodell und DAX-Kennzahlen zu vier Berichtsseiten.
 
-**[📥 Deutschen Power-BI-Bericht öffnen](Supply_Chain_Analytics_DE.pbix)** · **[📄 Analytischen Bericht lesen](Supply_Chain_Analytics_Analytischer_Bericht_DE.pdf)**
+**[📥 Deutschen Power-BI-Bericht öffnen](Supply_Chain_Analytics_DE.pbix)** · **[📄 Analytischen Bericht lesen](docs/Analytischer_Bericht_DE.pdf)**
 
 ---
 
@@ -93,22 +94,22 @@ Die Bestandsanalyse macht außerdem Risiken auf Ebene einzelner Lager sichtbar: 
 
 ### Lagerbestandsübersicht
 
-![Lagerbestandsübersicht mit KPI-Karten und Bestandsverteilung](<png/Изображение ChatGPT 14 нояб. 2026 г., 14_16_02.png>)
+![Lagerbestandsübersicht mit KPI-Karten und Bestandsverteilung](screenshots/01_inventory_overview.png)
 
 <details>
 <summary>📊 Weitere Berichtsseiten anzeigen</summary>
 
 ### Einkaufsanalyse
 
-![Einkaufsanalyse mit Bestellwert, Lieferquote und monatlicher Entwicklung](<png/Изображение ChatGPT 14 нояб. 2026 г., 14_16_23.png>)
+![Einkaufsanalyse mit Bestellwert, Lieferquote und monatlicher Entwicklung](screenshots/02_procurement_analysis.png)
 
 ### Lieferantenleistung
 
-![Lieferantenvergleich nach Einkaufswert und Pünktlichkeit](<png/Изображение ChatGPT 14 нояб. 2026 г., 14_16_29.png>)
+![Lieferantenvergleich nach Einkaufswert und Pünktlichkeit](screenshots/03_supplier_performance.png)
 
 ### Bestandsrisiken
 
-![Bestandsrisiken mit farblich markierten Artikel-Lager-Positionen](<png/Изображение ChatGPT 14 нояб. 2026 г., 14_16_33.png>)
+![Bestandsrisiken mit farblich markierten Artikel-Lager-Positionen](screenshots/04_inventory_risks.png)
 
 </details>
 
@@ -221,9 +222,13 @@ SUMX(
 
 </details>
 
-### Prüfung
+### Technischer Nachweis
 
-Die Gesamtwerte für Bestellungen, Mengen, Bestellwert, Liefertermine und Bestandsrisiken wurden mit der Excel-Quelle abgeglichen. Alle vier Berichtsseiten wurden auf Darstellung und Beschriftung geprüft. Die gespeicherte deutsche PBIX-Datei wurde erneut geöffnet; die eingebetteten Daten wurden dabei erfolgreich geladen.
+Am 15.11.2026 wurden die DAX-Ausdrücke, Power-Query-Abfragen, Beziehungen, Berichtsdefinitionen und eingebetteten Tabellen direkt aus der veröffentlichten PBIX gelesen. Die Formeln und Beziehungen stehen in [docs/MODELL.md](docs/MODELL.md), einschließlich der Git-Blob-ID der geprüften Datei.
+
+Die oben genannten Gesamtwerte für Bestellungen, Mengen, Bestellwert, Verspätungen und Bestandsrisiken wurden zusätzlich aus den eingebetteten Tabellen nachgerechnet. Dieser Abgleich gilt für die beschriebenen Gesamtwerte; er ersetzt keinen vollständigen Test aller DAX-Filterkontexte oder der Bedienoberfläche.
+
+Die Modellnachweise zeigen die Umsetzung des Lernprojekts. Eine kommerzielle Verantwortung, nachgewiesene Einsparung oder unabhängig belegte alleinige Urheberschaft wird daraus nicht abgeleitet.
 
 ---
 
@@ -231,26 +236,32 @@ Die Gesamtwerte für Bestellungen, Mengen, Bestellwert, Liefertermine und Bestan
 
 ## 📁 Projektdateien
 
-Die wichtigsten Dateien im Projektordner:
+Der veröffentlichte Dateibestand:
 
 ```text
-Курсовой проект/
+inventory-procurement-powerbi/
 ├── README.md
 ├── Supply_Chain_Analytics_DE.pbix
-├── Supply_Chain_Analytics.pbix
-├── 03_Inventory_Procurement.xlsx
-├── Supply_Chain_Analytics_Analytischer_Bericht_DE.pdf
-└── png/
-    └── Vier PNG-Vorschauen der Berichtsseiten
+├── docs/
+│   ├── Analytischer_Bericht_DE.pdf
+│   ├── Power_BI_Dashboard.pdf
+│   └── MODELL.md
+└── screenshots/
+    ├── 01_inventory_overview.png
+    ├── 02_procurement_analysis.png
+    ├── 03_supplier_performance.png
+    └── 04_inventory_risks.png
 ```
 
-| **Datei / Ordner** | **Zweck** |
+| Datei / Ordner | Zweck |
 | --- | --- |
-| [Supply_Chain_Analytics_DE.pbix](Supply_Chain_Analytics_DE.pbix) | Deutsche Berichtsversion mit eingebetteten Daten |
-| [Supply_Chain_Analytics.pbix](Supply_Chain_Analytics.pbix) | Unveränderte ursprüngliche Berichtsversion |
-| [03_Inventory_Procurement.xlsx](03_Inventory_Procurement.xlsx) | Datenquelle für eine erneute Aktualisierung |
-| [Analytischer Bericht auf Deutsch](Supply_Chain_Analytics_Analytischer_Bericht_DE.pdf) | Begleitende Auswertung als PDF |
-| [png/](png/) | Vorhandene Vorschauen der vier Berichtsseiten |
+| [Supply_Chain_Analytics_DE.pbix](Supply_Chain_Analytics_DE.pbix) | Bericht mit eingebetteten Daten |
+| [Analytischer Bericht](docs/Analytischer_Bericht_DE.pdf) | Begleitende Auswertung |
+| [Dashboard-PDF](docs/Power_BI_Dashboard.pdf) | Berichtsexport als Vorschau |
+| [Modellnachweis](docs/MODELL.md) | DAX, Power Query und Beziehungen der veröffentlichten PBIX |
+| [screenshots/](screenshots/) | Vier PNG-Vorschauen |
+
+Die ursprüngliche Excel-Quelle `03_Inventory_Procurement.xlsx` und die anderssprachige ursprüngliche PBIX sind **nicht** in diesem Repository enthalten. Die PDF- und PNG-Dateien sind statische Vorschauen und können einen früheren Darstellungsstand zeigen.
 
 ---
 
@@ -268,13 +279,13 @@ Die gespeicherten Daten sind bereits im Bericht enthalten. Für die erste Betrac
 
 ### Daten aktualisieren
 
-1. Die Arbeitsmappe `03_Inventory_Procurement.xlsx` lokal bereitstellen.
+1. Die ursprüngliche Arbeitsmappe `03_Inventory_Procurement.xlsx` lokal bereitstellen. Sie ist nicht Teil des Downloads; ohne sie ist ein erneuter Import nicht reproduzierbar.
 2. Im Power-Query-Editor die Excel-Quellpfade der importierten Tabellen auf den eigenen Speicherort anpassen.
 3. Änderungen übernehmen und den Bericht aktualisieren.
 4. Prüfen, ob Kennzahlen und Bestandsstichtag den erwarteten Daten entsprechen.
 
 > [!TIP]
-> Die Quelldatei ist derzeit über einen absoluten lokalen Pfad eingebunden. Beim Umzug auf einen anderen Computer muss dieser Pfad angepasst werden. Für die Bilddarstellung auf GitHub muss der Ordner `png` zusammen mit dem README im gleichen relativen Pfad vorhanden sein.
+> Die Excel-Quelle ist über einen absoluten lokalen Pfad eingebunden. Für eine Aktualisierung auf einem anderen Computer muss dieser Pfad angepasst werden. Zum Betrachten der vorhandenen Daten ist kein erneuter Import erforderlich.
 
 ---
 
